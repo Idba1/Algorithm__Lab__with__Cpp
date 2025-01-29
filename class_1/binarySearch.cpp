@@ -39,6 +39,12 @@ int main()
     }
 
     sort(v.begin(), v.end());
+    cout << "your sorted array -> ";
+    for (int i = 0; i < sz; i++)
+    {
+        cout << v[i] << " ";
+    }
+    cout << endl;
 
     cout << "enter target for binary search: ";
     cin >> target;
