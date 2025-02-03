@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int LinearSearch(const vector<int> &arr, int target)
+int LinearSearch(vector<int> &arr, int target)
 {
     for (int i = 0; i < arr.size(); i++)
     {

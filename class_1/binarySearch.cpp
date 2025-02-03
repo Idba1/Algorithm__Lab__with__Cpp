@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int BinarySearchRecursive(const vector<int> &arr, int left, int right, int target)
+int BinarySearchRecursive(vector<int> &arr, int left, int right, int target)
 {
     if (left > right)
     {
