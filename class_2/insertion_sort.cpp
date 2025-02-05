@@ -3,20 +3,17 @@ using namespace std;
 
 void insertion_sort(vector<int> &v)
 {
-    for (int i = 0; i < v.size(); i++)
+    for (int i = 1; i < v.size(); i++)
     {
-        int min = i;
-        for (int j = i + 1; j < v.size(); j++)
+        int temp = v[i];
+        int j = i - 1;
+
+        while (j >= 0 && v[j] > temp)
         {
-            if (v[j] < v[min])
-            {
-                min = j;
-            }
+            v[j + 1] = v[j];
+            j--;
         }
-        if (min != i)
-        {
-            swap(v[i], v[min]);
-        }
+        v[j + 1] = temp;
     }
 }
 
