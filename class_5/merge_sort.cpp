@@ -1,49 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void merge(vector<int> &a, int p, int q, int r)
+void merge(vector<int> &v, int p, int q, int r)
 {
     vector<int> b(r - p + 1);
     int i = p, j = q + 1, k = 0;
     while (i <= q && j <= r)
     {
-        if (a[i] < a[j])
+        if (v[i] < v[j])
         {
-            b[k++] = a[i++];
+            b[k++] = v[i++];
         }
         else
         {
-            b[k++] = a[j++];
+            b[k++] = v[j++];
         }
     }
     while (i <= q)
     {
-        b[k++] = a[i++];
+        b[k++] = v[i++];
     }
     while (j <= r)
     {
-        b[k++] = a[j++];
+        b[k++] = v[j++];
     }
     for (i = r; i >= p; i--)
     {
-        a[i] = b[--k];
+        v[i] = b[--k];
     }
 }
 
-void mergeSort(vector<int> &a, int p, int r)
+void mergeSort(vector<int> &v, int p, int r)
 {
     if (p < r)
     {
         int q = (p + r) / 2;
-        mergeSort(a, p, q);
-        mergeSort(a, q + 1, r);
-        merge(a, p, q, r);
+        mergeSort(v, p, q);
+        mergeSort(v, q + 1, r);
+        merge(v, p, q, r);
     }
 }
 
-void printArray(vector<int> &a)
+void printArray(vector<int> &v)
 {
-    for (int num : a)
+    for (int num : v)
     {
         cout << num << " ";
     }
